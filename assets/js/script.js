@@ -86,4 +86,23 @@ var displayFiveDays = function(forecast){
         cardDate.classList = "card-header text-center border-0 w-100"; cardDate.textContent = moment.unix(daily.dt).format("MMM D, YYYY");
         cardContainer.appendChild(cardDate);
 
-       
+        var cardIcon = document.createElement("img")
+        cardIcon.classList = "card-body text-center"; cardIcon.setAttribute("src", `https://openweathermap.org/img/wn/${daily.weather[0].icon}.png`);
+        cardContainer.appendChild(cardIcon);
+
+        var cardTemp = document.createElement("span"); cardTemp.classList = "card-body text-center border-0 w-100";
+        cardTemp.textContent = "Temp: " + daily.main.temp + "ºF";
+        cardContainer.appendChild(cardTemp);
+
+        var cardWind = document.createElement("span"); cardWind.classList = "card-body text-center border-0 w-100";
+        cardWind.textContent = "Wind " + daily.wind.speed + "MPH";
+        cardContainer.appendChild(cardWind);
+
+        var cardHumidity = document.createElement("span"); cardHumidity.classList = "card-body text-center border-0 w-100";
+        cardHumidity.textContent = "Humidity: " + daily.main.humidity + "%";
+        cardContainer.appendChild(cardHumidity);
+
+        displayFiveEl.appendChild(cardContainer);
+        
+    };
+};
