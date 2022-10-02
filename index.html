@@ -4,34 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap-grid.min.css.map">
-    <link rel="stylesheet" href="https://fonts.google.com/share?selection.family=Noto%20Sans%20Mono:wght@100">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather App</title>
- 
-</head>
+ </head>
 
-<body>
-    <div class = "container">
-        <div class = "row">
-            <div class = "col-12">
-                <h1>Weather App</h1>
+ <body>
+
+    <header>
+        Weather App
+    </header>
+
+    <main>
+
+        <!--Search for a City-->
+
+        <div class ="container">
+            <div class ="row w-100">
+                <div class ="col-12 col-md-3 p-2 search-colum">
+                    <form id ="input-search" class="p-2">
+                        <h2>Search for a City:</h2>
+                        <input id ="city" type ="text" class ="form-input" autofocus="true" />
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
+
+                    <!--Current Weather-->
+
+                    <div class ="city col-12 col-md-9 border p-b-3">
+                        <h3 id ="searched-city"></h3>
+                        <div id="weather-container-now" class ="list-group"></div>
+
+                        <!-- History button-->
+
+                        <div id ="history-search-btns" class ="history-search border"></div>
+
+                        <!-- Display Weather -->
+                        <div id ="five-days" class="row fiveContainer">
+                            <h4 id ="forecast" class ="col-12 w-100"></h4>
+                            <div id ="display-fivedays" class ="d-flex"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Sidebar -->
-
-    <div class = "row">
-        <div class = "col-12 col-md-3">
-            <h3>Search up a City:</h3>
-            <form>
-                <div class = "form-grou input-group">
-                    
-                </div>
-            </form>
-        </div>
-    </div>
-    </div>
-    
-</body>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+ </body>
 </html>
