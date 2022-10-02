@@ -71,3 +71,19 @@ var getFiveDays = function(city){
         alert("Unable to connect");
     });
 };
+
+var displayFiveDays = function(forecast){
+    displayFiveEl.textContent = "";
+    titleForecastFiveEl.textContent = "5-Days Forecast:";
+
+    var listDays = forecast.list;
+     for ( var i = 5; i < listDays.length; i = i +8){
+        var daily = listDays[i];
+        
+        var cardContainer = document.createElement("div"); cardContainer.classList = "card bg-info text-light m-2 border-0cd .";
+
+        var cardDate = document.createElement("h5")
+        cardDate.classList = "card-header text-center border-0 w-100"; cardDate.textContent = moment.unix(daily.dt).format("MMM D, YYYY");
+        cardContainer.appendChild(cardDate);
+
+       
