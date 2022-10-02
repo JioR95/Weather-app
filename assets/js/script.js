@@ -106,3 +106,23 @@ var displayFiveDays = function(forecast){
         
     };
 };
+
+var displayUv = function (data){
+    var uvIndex = document.createElement("div");
+    uvIndex.textContent = "UV Index: ";
+    uvIndex.classList = "list-group-item border-0"
+
+    uvValue = document.createElement("span");
+    uvValue.textContent = data.value;
+
+    if(data.value > 8){
+        uvValue.classList = "severe alert alert-danger";
+    } else if (data.value > 2){
+        uvValue.classList = "moderate alert alert-warning"
+    } else{
+        uvValue.classList = "favorable alert alert-primary";
+    };
+
+    uvIndex.appendChild(uvValue);
+    searchedCityEl.appendChild(uvIndex);
+};
