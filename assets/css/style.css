@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+header {
+    display: flex;
+    color: grey;
+    font-size: 10vh;
+    text-align: center;
+    height: 18vh;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
