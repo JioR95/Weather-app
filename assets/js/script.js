@@ -160,4 +160,23 @@ if(city){
     getFiveDays(city);
 }
 }
- 
+
+var formSubmitHandler = function(event){
+    event.preventDefault();
+
+var city = cityEl.value.trim();
+if(city){
+    cityWeather(city);
+    getFiveDays(city);
+    cities.unshift({city});
+    cityEl.value = "";
+    saveSearch();
+    pastSearch(city);
+} else {
+    alert("Enter a city");
+}
+
+};
+
+InputSearchEl.addEventListener("submit", formSubmitHandler);
+historySerchEl.addEventListener("click", pastHandler);
