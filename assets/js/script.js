@@ -142,3 +142,22 @@ var getFiveDays = function(city){
         alert("Unable to connect");
     });
 };
+
+var pastSearch = function(past){
+    pastEl = document.createElement("button");
+    pastEl.textContent = past;
+    pastEl.classList = "d-flex w-100 btn-light border";
+    pastEl.setAttribute("data-city", past);
+    pastEl.setAttribute("type", "submit");
+
+    historySerchEl.prepend(pastEl);
+}
+
+var pastHandler = function(event){
+var city = event.target.getAttribute("data-city");
+if(city){
+    cityWeather(city);
+    getFiveDays(city);
+}
+}
+ 
