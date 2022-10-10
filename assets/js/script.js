@@ -127,12 +127,12 @@ var displayUv = function (data){
     searchedCityEl.appendChild(uvIndex);
 };
 
-var getFiveDays = function(city){
-    var apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`
+var getUv = function (lon,lat){
+    var apiUrl = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
     fetch(apiUrl).then(function(response){
         if(response.ok){
             response.json().then(function(data){
-                displayFiveDays(data,city);
+                displayUv(data,city);
             });
         }else{
             alert("Error");
